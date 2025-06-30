@@ -1,5 +1,5 @@
 # Rust build artifacts
-/target/
+target/
 
 # Frontend dependencies and build output
 /frontend/node_modules/
