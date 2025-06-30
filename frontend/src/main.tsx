@@ -1,17 +1,22 @@
 // frontend/src/main.tsx
+
 import React, { useMemo } from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
-import './index.css';
 
-// Import Solana wallet adapter styles
+// --- CRITICAL ---
+// This line imports your custom Tailwind styles. Without it, the UI will be unstyled.
+// import './index.css'; 
+
+// --- CRITICAL ---
+// This line imports the styles for the wallet adapter's modal pop-up.
 import '@solana/wallet-adapter-react-ui/styles.css';
 
 // Import wallet adapter components and hooks
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
 import { PhantomWalletAdapter, SolflareWalletAdapter } from '@solana/wallet-adapter-wallets';
-import { BackpackWalletAdapter } from '@solana/wallet-adapter-backpack'; // <-- CORRECTED IMPORT
+import { BackpackWalletAdapter } from '@solana/wallet-adapter-backpack';
 import { clusterApiUrl } from '@solana/web3.js';
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base';
 
@@ -23,7 +28,7 @@ const Main = () => {
     () => [
       new PhantomWalletAdapter(),
       new SolflareWalletAdapter(),
-      new BackpackWalletAdapter(), // <-- THIS NOW WORKS
+      new BackpackWalletAdapter(),
     ],
     [network]
   );

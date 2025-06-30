@@ -1,0 +1,15 @@
+# Rust build artifacts
+/target/
+
+# Frontend dependencies and build output
+/frontend/node_modules/
+/frontend/dist/
+/frontend/.vite/
+
+# Environment variable files (contains secrets)
+*.env
+.env.*
+
+# IDE and OS specific files
+.vscode/
+.DS_Store
